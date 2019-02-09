@@ -11,7 +11,6 @@ import com.example.hp.nibejpicodingchallenge.Fragment.ForecastFragment;
 public class MainActivity extends AppCompatActivity {
 
     CoordinatesFragment coordinatesFragment = new CoordinatesFragment();
-    ForecastFragment forecastFragment = new ForecastFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

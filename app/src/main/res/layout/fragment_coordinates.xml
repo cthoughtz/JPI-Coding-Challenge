@@ -19,8 +19,7 @@
             <EditText
                 android:id="@+id/latitudeId"
                 android:hint="latitude"
-                android:inputType="number"
-                android:layout_width="match_parent"
+                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             </android.support.design.widget.TextInputLayout>
 
@@ -39,8 +38,8 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:id="@+id/forecast"
-            android:text="Get Forecst"
+            android:id="@+id/forecastButton"
+            android:text="@string/Forecast"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
