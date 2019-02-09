@@ -12,7 +12,9 @@ import com.example.hp.nibejpicodingchallenge.R;
 
 
 public class ForecastFragment extends Fragment {
-
+ String lat;
+ String lon;
+ String coords;
 
     public ForecastFragment() {
         // Required empty public constructor
@@ -25,8 +27,10 @@ public class ForecastFragment extends Fragment {
 
         View ForecastFragmentView = inflater.inflate(R.layout.fragment_forecast, container, false);
 
+        lat = getArguments().getString("lat");
+        lon = getArguments().getString("lon");
 
-
+        coords = lat+","+lon;;
 
         return ForecastFragmentView;
     }
