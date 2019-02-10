@@ -24,6 +24,8 @@ import com.example.hp.nibejpicodingchallenge.forecastmodel.TestStuff;
 import com.example.hp.nibejpicodingchallenge.model.Example;
 import com.example.hp.nibejpicodingchallenge.retro.APIClient;
 import com.example.hp.nibejpicodingchallenge.retro.Api;
+
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +46,7 @@ public class ForecastFragment extends Fragment {
  private TextView currentWindSpeed;
  private ImageView currentImage;
  private ListView dailyForecast;
+ private TextView currentCity;
 
 
  String test = "Atlanta";
@@ -70,6 +73,7 @@ public class ForecastFragment extends Fragment {
         currentWindSpeed = ForecastFragmentView.findViewById(R.id.currentWindSpeedId);
         currentImage = ForecastFragmentView.findViewById(R.id.currentWeatherID);
         dailyForecast = ForecastFragmentView.findViewById(R.id.listViewDaily);
+        currentCity = ForecastFragmentView.findViewById(R.id.currentDateID);
 
 
 
@@ -77,32 +81,13 @@ public class ForecastFragment extends Fragment {
 
         retroService();
 
-        listViewMethod();
+
 
         return ForecastFragmentView;
     }
 
 
-    private void listViewMethod() {
 
-        ArrayList<String>arrayList = new ArrayList<>();
-
-       // arrayAdapter = new ArrayAdapter(getActivity(),R.layout.listview_weather,R.id.weekday,R.id.icon,arrayList);
-
-
-
-        dailyForecast.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(),"Item Clicked",Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-
-
-
-    }
 
     private void retroService() {
 
@@ -113,9 +98,16 @@ public class ForecastFragment extends Fragment {
         call.enqueue(new Callback<Example>() {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-                currentTemperature.setText(response.body().getMain().getTemp().toString());
-                currentHumidity.setText(response.body().getMain().getHumidity().toString());
-                currentWindSpeed.setText(response.body().getWind().getSpeed().toString());
+
+                double kelvinToFahrenheit = (response.body().getMain().getTemp()-273.15) *(9/5)+32;
+
+                DecimalFormat decimalFormat = new DecimalFormat("##.##");
+                String formatedFahrenheit = decimalFormat.format(kelvinToFahrenheit);
+
+                currentTemperature.setText("Temp: "+formatedFahrenheit+ " \u2109");
+                currentHumidity.setText("Humidity: "+response.body().getMain().getHumidity().toString()+" %");
+                currentWindSpeed.setText("Wind: " +response.body().getWind().getSpeed().toString()+" m/s");  //  Meters per second instead of miles per hour
+                currentCity.setText(response.body().getName());
 
 
                 String icon = response.body().getWeather().get(0).getIcon();

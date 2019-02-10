@@ -78,14 +78,14 @@
             android:layout_marginTop="212dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Satureday"
-            android:textSize="10sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guidlineHalfWay"
             app:layout_constraintEnd_toStartOf="@+id/guidlineMiddle"
-            app:layout_constraintHorizontal_bias="0.152"
+            app:layout_constraintHorizontal_bias="0.29"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/currentTempId"
@@ -96,11 +96,11 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:textAlignment="textStart"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guidlineHalfWay"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.091"
+            app:layout_constraintHorizontal_bias="0.09"
             app:layout_constraintStart_toStartOf="@+id/guidlineMiddle"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.337"
@@ -115,15 +115,14 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:textAlignment="textStart"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guidlineHalfWay"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.097"
+            app:layout_constraintHorizontal_bias="0.09"
             app:layout_constraintStart_toStartOf="@+id/guidlineMiddle"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintVertical_bias="0.45" />
 
         <TextView
             android:id="@+id/currentWindSpeedId"
@@ -134,7 +133,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:textAlignment="textStart"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guidlineHalfWay"
             app:layout_constraintEnd_toEndOf="parent"
@@ -148,17 +147,17 @@
         <ListView
             android:id="@+id/listViewDaily"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="265dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="-1dp"
             android:paddingBottom="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guidlineHalfWay"
-            app:layout_constraintVertical_bias="0.054"></ListView>
+            app:layout_constraintTop_toTopOf="@+id/guidlineHalfWay"></ListView>
 
 
 
