@@ -1,109 +1,132 @@
 
 package com.example.hp.nibejpicodingchallenge.model;
 
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Example {
 
-    @SerializedName("latitude")
+    @SerializedName("coord")
     @Expose
-    private Double latitude;
-    @SerializedName("longitude")
+    private Coord coord;
+    @SerializedName("weather")
     @Expose
-    private Double longitude;
-    @SerializedName("timezone")
+    private List<Weather> weather = null;
+    @SerializedName("base")
     @Expose
-    private String timezone;
-    @SerializedName("currently")
+    private String base;
+    @SerializedName("main")
     @Expose
-    private Currently currently;
-    @SerializedName("minutely")
+    private Main main;
+    @SerializedName("wind")
     @Expose
-    private Minutely minutely;
-    @SerializedName("hourly")
+    private Wind wind;
+    @SerializedName("clouds")
     @Expose
-    private Hourly hourly;
-    @SerializedName("daily")
+    private Clouds clouds;
+    @SerializedName("dt")
     @Expose
-    private Daily daily;
-    @SerializedName("flags")
+    private Integer dt;
+    @SerializedName("sys")
     @Expose
-    private Flags flags;
-    @SerializedName("offset")
+    private Sys sys;
+    @SerializedName("id")
     @Expose
-    private Integer offset;
+    private Integer id;
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("cod")
+    @Expose
+    private Integer cod;
 
-    public Double getLatitude() {
-        return latitude;
+    public Coord getCoord() {
+        return coord;
     }
 
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
+    public void setCoord(Coord coord) {
+        this.coord = coord;
     }
 
-    public Double getLongitude() {
-        return longitude;
+    public List<Weather> getWeather() {
+        return weather;
     }
 
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
+    public void setWeather(List<Weather> weather) {
+        this.weather = weather;
     }
 
-    public String getTimezone() {
-        return timezone;
+    public String getBase() {
+        return base;
     }
 
-    public void setTimezone(String timezone) {
-        this.timezone = timezone;
+    public void setBase(String base) {
+        this.base = base;
     }
 
-    public Currently getCurrently() {
-        return currently;
+    public Main getMain() {
+        return main;
     }
 
-    public void setCurrently(Currently currently) {
-        this.currently = currently;
+    public void setMain(Main main) {
+        this.main = main;
     }
 
-    public Minutely getMinutely() {
-        return minutely;
+    public Wind getWind() {
+        return wind;
     }
 
-    public void setMinutely(Minutely minutely) {
-        this.minutely = minutely;
+    public void setWind(Wind wind) {
+        this.wind = wind;
     }
 
-    public Hourly getHourly() {
-        return hourly;
+    public Clouds getClouds() {
+        return clouds;
     }
 
-    public void setHourly(Hourly hourly) {
-        this.hourly = hourly;
+    public void setClouds(Clouds clouds) {
+        this.clouds = clouds;
     }
 
-    public Daily getDaily() {
-        return daily;
+    public Integer getDt() {
+        return dt;
     }
 
-    public void setDaily(Daily daily) {
-        this.daily = daily;
+    public void setDt(Integer dt) {
+        this.dt = dt;
     }
 
-    public Flags getFlags() {
-        return flags;
+    public Sys getSys() {
+        return sys;
     }
 
-    public void setFlags(Flags flags) {
-        this.flags = flags;
+    public void setSys(Sys sys) {
+        this.sys = sys;
     }
 
-    public Integer getOffset() {
-        return offset;
+    public Integer getId() {
+        return id;
     }
 
-    public void setOffset(Integer offset) {
-        this.offset = offset;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getCod() {
+        return cod;
+    }
+
+    public void setCod(Integer cod) {
+        this.cod = cod;
     }
 
 }
